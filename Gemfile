@@ -5,10 +5,10 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rack-cors'
 gem 'nokogiri'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'dotenv-rails'
 end
 
 group :development do
