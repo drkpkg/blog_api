@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>development.log - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../log/development_log.html">development.log</a>
+  
+    <li><a href="../log/test_log.html">test.log</a>
+  
+    <li><a href="../public/robots_txt.html">robots</a>
+  
+    <li><a href="../tmp/pids/server_pid.html">server.pid</a>
+  
+    <li><a href="../tmp/restart_txt.html">restart</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page log/development.log">
+
+<pre>[1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; character varying PRIMARY KEY)[0m
+[1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE &quot;ar_internal_metadata&quot; (&quot;key&quot; character varying PRIMARY KEY, &quot;value&quot; character varying, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL)[0m
+[1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(838789120653861195);[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateContentPages.html">CreateContentPages</a>
+(20160906032425)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE &quot;content_pages&quot; (&quot;id&quot; serial primary key, &quot;url&quot; character varying, &quot;content&quot; character varying, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL)[0m
+[1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES ($1) RETURNING &quot;version&quot;[0m  [[&quot;version&quot;, &quot;20160906032425&quot;]]
+[1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, :environment], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;ar_internal_metadata&quot; (&quot;key&quot;, &quot;value&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;key&quot;[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;value&quot;, &quot;development&quot;], [&quot;created_at&quot;, 2016-09-06 03:43:58 UTC], [&quot;updated_at&quot;, 2016-09-06 03:43:58 UTC]]
+[1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(838789120653861195)[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (3.2ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete</pre>
+
+<p>FROM pg_constraint c JOIN pg_class t1 ON c.conrelid = t1.oid JOIN pg_class
+t2 ON c.confrelid = t2.oid JOIN pg_attribute a1 ON a1.attnum = <a
+href="1">c.conkey</a> AND a1.attrelid = t1.oid JOIN pg_attribute a2 ON
+a2.attnum = <a href="1">c.confkey</a> AND a2.attrelid = t2.oid JOIN
+pg_namespace t3 ON c.connamespace = t3.oid WHERE c.contype = &#39;f&#39;</p>
+
+<pre>AND t1.relname = &#39;content_pages&#39;
+AND t3.nspname = ANY (current_schemas(false))</pre>
+
+<p>ORDER BY c.conname [0m Started GET “/” for 127.0.0.1 at 2016-09-06
+00:38:18 -0400</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by Rails::WelcomeController#index as HTML</p>
+
+<pre>Parameters: {&quot;internal&quot;=&gt;true}
+Rendering /home/drkpkg/.gem/ruby/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+Rendered /home/drkpkg/.gem/ruby/2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (6.9ms)</pre>
+
+<p>Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.0ms)</p>
+
+<p>Started GET “/favicon.ico” for 127.0.0.1 at 2016-09-06 00:38:18 -0400</p>
+
+<p>ActionController::RoutingError (No route matches [GET] “/favicon.ico”):</p>
+
+<p>actionpack (5.0.0.1)
+lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call&#39;
+actionpack (5.0.0.1)
+lib/action_dispatch/middleware/show_exceptions.rb:31:in `call&#39; railties
+(5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app&#39; railties (5.0.0.1)
+lib/rails/rack/logger.rb:24:in `block in call&#39; activesupport (5.0.0.1)
+lib/active_support/tagged_logging.rb:70:in `block in tagged&#39;
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in
+`tagged&#39; activesupport (5.0.0.1)
+lib/active_support/tagged_logging.rb:70:in `tagged&#39; railties (5.0.0.1)
+lib/rails/rack/logger.rb:24:in `call&#39; actionpack (5.0.0.1)
+lib/action_dispatch/middleware/request_id.rb:24:in `call&#39; rack (2.0.1)
+lib/rack/runtime.rb:22:in `call&#39; activesupport (5.0.0.1)
+lib/active_support/cache/strategy/local_cache_middleware.rb:28:in
+`call&#39; actionpack (5.0.0.1)
+lib/action_dispatch/middleware/executor.rb:12:in `call&#39; actionpack
+(5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call&#39; rack
+(2.0.1) lib/rack/sendfile.rb:111:in `call&#39; railties (5.0.0.1)
+lib/rails/engine.rb:522:in `call&#39; puma (3.6.0)
+lib/puma/configuration.rb:225:in `call&#39; puma (3.6.0)
+lib/puma/server.rb:578:in `handle_request&#39; puma (3.6.0)
+lib/puma/server.rb:415:in `process_client&#39; puma (3.6.0)
+lib/puma/server.rb:275:in `block in run&#39; puma (3.6.0)
+lib/puma/thread_pool.rb:116:in `block in spawn_thread&#39; Started GET
+“/api/v1/” for 127.0.0.1 at 2016-09-06 00:38:24 -0400</p>
+
+<p>ActionController::RoutingError (No route matches [GET] “/api/v1”):</p>
+
+<p>actionpack (5.0.0.1)
+lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call&#39;
+actionpack (5.0.0.1)
+lib/action_dispatch/middleware/show_exceptions.rb:31:in `call&#39; railties
+(5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app&#39; railties (5.0.0.1)
+lib/rails/rack/logger.rb:24:in `block in call&#39; activesupport (5.0.0.1)
+lib/active_support/tagged_logging.rb:70:in `block in tagged&#39;
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in
+`tagged&#39; activesupport (5.0.0.1)
+lib/active_support/tagged_logging.rb:70:in `tagged&#39; railties (5.0.0.1)
+lib/rails/rack/logger.rb:24:in `call&#39; actionpack (5.0.0.1)
+lib/action_dispatch/middleware/request_id.rb:24:in `call&#39; rack (2.0.1)
+lib/rack/runtime.rb:22:in `call&#39; activesupport (5.0.0.1)
+lib/active_support/cache/strategy/local_cache_middleware.rb:28:in
+`call&#39; actionpack (5.0.0.1)
+lib/action_dispatch/middleware/executor.rb:12:in `call&#39; actionpack
+(5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call&#39; rack
+(2.0.1) lib/rack/sendfile.rb:111:in `call&#39; railties (5.0.0.1)
+lib/rails/engine.rb:522:in `call&#39; puma (3.6.0)
+lib/puma/configuration.rb:225:in `call&#39; puma (3.6.0)
+lib/puma/server.rb:578:in `handle_request&#39; puma (3.6.0)
+lib/puma/server.rb:415:in `process_client&#39; puma (3.6.0)
+lib/puma/server.rb:275:in `block in run&#39; puma (3.6.0)
+lib/puma/thread_pool.rb:116:in `block in spawn_thread&#39; Started POST
+“/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:40:43 -0400
+Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as *</p>
+
+<p>Completed 200 OK in 890ms (Views: 1.6ms | ActiveRecord: 4.8ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:42:49
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as   * Completed 200 OK in 908ms (Views: 0.8ms | ActiveRecord: 3.1ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:42:58
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as *</p>
+
+<p>Completed 200 OK in 900ms (Views: 1.2ms | ActiveRecord: 4.7ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:43:56
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as   * Completed 400 Bad Request in 10ms (Views: 0.2ms | ActiveRecord:
+2.5ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:43:58
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong> Completed 400 Bad Request in 1ms (Views: 0.2ms |
+ActiveRecord: 0.0ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:44:04
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong> Completed 400 Bad Request in 1ms (Views: 0.2ms |
+ActiveRecord: 0.0ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:44:24
+-0400</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong> Completed 400 Bad Request in 55733ms (Views: 0.8ms |
+ActiveRecord: 6.2ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:46:07
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong> Completed 400 Bad Request in 71550ms (Views: 1.5ms |
+ActiveRecord: 0.0ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:48:53
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong> Completed 400 Bad Request in 17567ms (Views: 1.5ms |
+ActiveRecord: 0.0ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:49:49
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 200 OK in 9275ms (Views: 1.9ms | ActiveRecord: 0.0ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:50:20
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 200 OK in 992ms (Views: 2.4ms | ActiveRecord: 6.2ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:51:44
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 200 OK in 1026ms (Views: 8.0ms | ActiveRecord: 6.2ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:53:23
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 200 OK in 971ms (Views: 1.8ms | ActiveRecord: 5.5ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:55:27
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 200 OK in 4166ms (Views: 20.5ms | ActiveRecord: 4.4ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 00:56:59
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 200 OK in 866ms (Views: 21.1ms | ActiveRecord: 2.6ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:00:22
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 200 OK in 1042ms (Views: 2.9ms | ActiveRecord: 5.3ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:00:44
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 400 Bad Request in 848ms (Views: 0.8ms | ActiveRecord: 5.4ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:01:44
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}</pre>
+
+<p>Completed 200 OK in 876ms (Views: 4.0ms | ActiveRecord: 6.1ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:02:04
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[1m[36mContentPage Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:02:05 UTC], [&quot;updated_at&quot;, 2016-09-06 05:02:05 UTC]]
+[1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m</pre>
+
+<p>Completed 200 OK in 1079ms (Views: 2.9ms | ActiveRecord: 8.2ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(838789120653861195);[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, :environment], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(838789120653861195)[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (3.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete</pre>
+
+<p>FROM pg_constraint c JOIN pg_class t1 ON c.conrelid = t1.oid JOIN pg_class
+t2 ON c.confrelid = t2.oid JOIN pg_attribute a1 ON a1.attnum = <a
+href="1">c.conkey</a> AND a1.attrelid = t1.oid JOIN pg_attribute a2 ON
+a2.attnum = <a href="1">c.confkey</a> AND a2.attrelid = t2.oid JOIN
+pg_namespace t3 ON c.connamespace = t3.oid WHERE c.contype = &#39;f&#39;</p>
+
+<pre>AND t1.relname = &#39;content_pages&#39;
+AND t3.nspname = ANY (current_schemas(false))</pre>
+
+<p>ORDER BY c.conname [0m Started GET “/api/v1/url/list_all” for 127.0.0.1 at
+2016-09-06 01:07:24 -0400 Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML</p>
+
+<pre>[1m[36mContentPage Load (0.6ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 34ms (Views: 21.3ms | ActiveRecord: 6.1ms)</p>
+
+<p>Started GET “/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:07:54
+-0400 Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.5ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.5ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:10:02
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mContentPage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m</pre>
+
+<p>Completed 200 OK in 1258ms (Views: 0.8ms | ActiveRecord: 6.2ms)</p>
+
+<p>Started GET “/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:10:09
+-0400 Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.4ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:10:38
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mContentPage Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m</pre>
+
+<p>Completed 200 OK in 939ms (Views: 0.7ms | ActiveRecord: 7.3ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:13:46
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[1m[36mContentPage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m</pre>
+
+<p>Completed 200 OK in 1034ms (Views: 0.6ms | ActiveRecord: 1.0ms)</p>
+
+<p>Started GET “/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:13:50
+-0400 Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.4ms)</p>
+
+<p>Started GET “/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:15:08
+-0400 Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.6ms)[0m  [1m[34mSELECT link, content FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.9ms)</p>
+
+<p>ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column “link”
+does not exist LINE 1: SELECT link, content FROM “content_pages”</p>
+
+<pre>^</pre>
+
+<p>: SELECT link, content FROM “content_pages”):</p>
+
+<p>app/controllers/content_controller.rb:9:in `list_all&#39; Started GET
+“/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:15:26 -0400
+Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.6ms)[0m  [1m[34mSELECT link, content FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.7ms)</p>
+
+<p>ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column “link”
+does not exist LINE 1: SELECT link, content FROM “content_pages”</p>
+
+<pre>^</pre>
+
+<p>: SELECT link, content FROM “content_pages”):</p>
+
+<p>app/controllers/content_controller.rb:9:in `list_all&#39; Started GET
+“/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:15:37 -0400
+Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.6ms)[0m  [1m[34mSELECT url, content FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 31ms (Views: 17.8ms | ActiveRecord: 6.0ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:16:46
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;https://www.reddit.com/r/DotA2/&quot;}</pre>
+
+<p>Completed 500 Internal Server Error in 1232ms (ActiveRecord: 0.0ms)</p>
+
+<p>OpenURI::HTTPError (429 Too Many Requests):</p>
+
+<p>app/controllers/content_controller.rb:39:in `parse_page&#39;
+app/controllers/content_controller.rb:27:in `create&#39; Started GET
+“/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:16:58 -0400
+Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.5ms)[0m  [1m[34mSELECT url, content FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.5ms)</p>
+
+<p>Started GET “/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:17:00
+-0400 Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.5ms)[0m  [1m[34mSELECT url, content FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.5ms)</p>
+
+<p>Started POST “/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:17:21
+-0400 Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://www.reddit.com/r/DotA2/&quot;}</pre>
+
+<p>Completed 500 Internal Server Error in 586ms (ActiveRecord: 0.0ms)</p>
+
+<p>RuntimeError (redirection forbidden: <a
+href="http://www.reddit.com/r/DotA2">www.reddit.com/r/DotA2</a>/ -&gt; <a
+href="https://www.reddit.com/r/DotA2">www.reddit.com/r/DotA2</a>/):</p>
+
+<p>app/controllers/content_controller.rb:39:in `parse_page&#39;
+app/controllers/content_controller.rb:27:in `create&#39; Started POST
+“/api/v1/content/create” for 127.0.0.1 at 2016-09-06 01:19:04 -0400
+Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as <strong>/</strong></p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;https://www.hispachan.org/&quot;}
+[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[1m[36mContentPage Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;https://www.hispachan.org/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;https://www.hispachan.org/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Reglas\&quot;, :link=&gt;\&quot;/reglas/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;General\&quot;, :link=&gt;\&quot;/g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chicas Sexy\&quot;, :link=&gt;\&quot;/s/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Hentai\&quot;, :link=&gt;\&quot;/h/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;LGBT\&quot;, :link=&gt;\&quot;/lgbt/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Videojuegos\&quot;, :link=&gt;\&quot;/v/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Anime y Manga\&quot;, :link=&gt;\&quot;/a/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cómics y Animación\&quot;, :link=&gt;\&quot;/co/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Música, Cine y Series\&quot;, :link=&gt;\&quot;/mcs/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Dibujo y Arte\&quot;, :link=&gt;\&quot;/di/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Política\&quot;, :link=&gt;\&quot;/pol/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Humanidades\&quot;, :link=&gt;\&quot;/hu/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Tecnología y Programación\&quot;, :link=&gt;\&quot;/t/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Ciencia y Matemáticas\&quot;, :link=&gt;\&quot;/c/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Funposting\&quot;, :link=&gt;\&quot;/fun/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;España\&quot;, :link=&gt;\&quot;/esp/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Argentina\&quot;, :link=&gt;\&quot;/arg/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chile\&quot;, :link=&gt;\&quot;/cl/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Colombia\&quot;, :link=&gt;\&quot;/col/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;México\&quot;, :link=&gt;\&quot;/mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Perú\&quot;, :link=&gt;\&quot;/pe/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Venezuela\&quot;, :link=&gt;\&quot;/ve/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Info/Reglas\&quot;, :link=&gt;\&quot;/reglas/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;/blog/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Twitter\&quot;, :link=&gt;\&quot;https://www.twitter.com/hispachan\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Bans\&quot;, :link=&gt;\&quot;/bans/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Historia\&quot;, :link=&gt;\&quot;/historia/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Transparencia\&quot;, :link=&gt;\&quot;/transparencia/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contacto\&quot;, :link=&gt;\&quot;mailto:info@hispachan.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Follow @Hispachan\&quot;, :link=&gt;\&quot;https://twitter.com/Hispachan\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516285\&quot;, :link=&gt;\&quot;mex/res/516178.html#516285\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516284\&quot;, :link=&gt;\&quot;mex/res/516178.html#516284\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736751\&quot;, :link=&gt;\&quot;g/res/2736741.html#2736751\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736750\&quot;, :link=&gt;\&quot;g/res/2736704.html#2736750\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516283\&quot;, :link=&gt;\&quot;mex/res/515908.html#516283\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736749\&quot;, :link=&gt;\&quot;g/res/2736693.html#2736749\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516282\&quot;, :link=&gt;\&quot;mex/res/516178.html#516282\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516281\&quot;, :link=&gt;\&quot;mex/res/516178.html#516281\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516280\&quot;, :link=&gt;\&quot;mex/res/516273.html#516280\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/arg/\&quot;, :link=&gt;\&quot;arg/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;53070\&quot;, :link=&gt;\&quot;arg/res/53055.html#53070\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736748\&quot;, :link=&gt;\&quot;g/res/2736704.html#2736748\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516279\&quot;, :link=&gt;\&quot;mex/res/516178.html#516279\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736747\&quot;, :link=&gt;\&quot;g/res/2736051.html#2736747\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516278\&quot;, :link=&gt;\&quot;mex/res/516178.html#516278\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736746\&quot;, :link=&gt;\&quot;g/res/2736693.html#2736746\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/ve/\&quot;, :link=&gt;\&quot;ve/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;636176\&quot;, :link=&gt;\&quot;ve/res/635948.html#636176\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/ve/\&quot;, :link=&gt;\&quot;ve/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;636175\&quot;, :link=&gt;\&quot;ve/res/636112.html#636175\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516277\&quot;, :link=&gt;\&quot;mex/res/515234.html#516277\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736745\&quot;, :link=&gt;\&quot;g/res/2736741.html#2736745\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/s/\&quot;, :link=&gt;\&quot;s/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;228182\&quot;, :link=&gt;\&quot;s/res/221931.html#228182\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736744\&quot;, :link=&gt;\&quot;g/res/2736051.html#2736744\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516276\&quot;, :link=&gt;\&quot;mex/res/516178.html#516276\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/a/\&quot;, :link=&gt;\&quot;a/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;155226\&quot;, :link=&gt;\&quot;a/res/154569.html#155226\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736743\&quot;, :link=&gt;\&quot;g/res/2736732.html#2736743\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516275\&quot;, :link=&gt;\&quot;mex/res/516178.html#516275\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736742\&quot;, :link=&gt;\&quot;g/res/2736704.html#2736742\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736741\&quot;, :link=&gt;\&quot;g/res/2736741.html#2736741\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/mex/\&quot;, :link=&gt;\&quot;mex/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;516274\&quot;, :link=&gt;\&quot;mex/res/516178.html#516274\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736740\&quot;, :link=&gt;\&quot;g/res/2736362.html#2736740\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;/g/\&quot;, :link=&gt;\&quot;g/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;2736739\&quot;, :link=&gt;\&quot;g/res/2736732.html#2736739\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;https://www.hispachan.org/a/res/151453.html#151486\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;https://www.hispachan.org/cl/res/5977.html#6148\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;https://www.hispachan.org/esp/res/101223.html#101228\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;https://www.hispachan.org/cl/res/7095.html#7095\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://main.exoclick.com/img-click.php?idzone=2130483\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inicio\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Información\&quot;, :link=&gt;\&quot;/reglas/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contacto\&quot;, :link=&gt;\&quot;mailto:info@hispachan.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Hispachan.org\&quot;, :link=&gt;\&quot;/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:19:06 UTC], [&quot;updated_at&quot;, 2016-09-06 05:19:06 UTC]]
+[1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m</pre>
+
+<p>Completed 200 OK in 2061ms (Views: 1.1ms | ActiveRecord: 4.2ms)</p>
+
+<p>Started GET “/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:19:09
+-0400 Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT url, content FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.4ms)</p>
+
+<p>Started GET “/api/v1/url/list_all” for 127.0.0.1 at 2016-09-06 01:19:27
+-0400 Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as <strong>/</strong></p>
+
+<pre>[1m[36mContentPage Load (0.5ms)[0m  [1m[34mSELECT id,url,content FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 29ms (Views: 17.4ms | ActiveRecord: 5.8ms)</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

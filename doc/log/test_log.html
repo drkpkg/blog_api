@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>test.log - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../log/development_log.html">development.log</a>
+  
+    <li><a href="../log/test_log.html">test.log</a>
+  
+    <li><a href="../public/robots_txt.html">robots</a>
+  
+    <li><a href="../tmp/pids/server_pid.html">server.pid</a>
+  
+    <li><a href="../tmp/restart_txt.html">restart</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page log/test.log">
+
+<pre>[1m[35m (116.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS &quot;blog_api_test&quot;[0m
+[1m[35m (254.5ms)[0m  [1m[35mCREATE DATABASE &quot;blog_api_test&quot; ENCODING = &#39;unicode&#39;[0m
+[1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS &quot;plpgsql&quot;[0m
+[1m[35m (24.6ms)[0m  [1m[35mCREATE TABLE &quot;content_pages&quot; (&quot;id&quot; serial primary key, &quot;url&quot; character varying, &quot;content&quot; character varying, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL)[0m
+[1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; character varying PRIMARY KEY)[0m
+[1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM &quot;schema_migrations&quot;[0m
+[1m[35m (2.7ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160906032425&#39;)[0m
+[1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE &quot;ar_internal_metadata&quot; (&quot;key&quot; character varying PRIMARY KEY, &quot;value&quot; character varying, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL)[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, :environment], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;ar_internal_metadata&quot; (&quot;key&quot;, &quot;value&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;key&quot;[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;value&quot;, &quot;test&quot;], [&quot;created_at&quot;, 2016-09-06 03:49:47 UTC], [&quot;updated_at&quot;, 2016-09-06 03:49:47 UTC]]
+[1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, :environment], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.4ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:49:47.459746&#39;, &#39;2016-09-06 03:49:47.459746&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:49:47.459746&#39;, &#39;2016-09-06 03:49:47.459746&#39;, 298486374)[0m
+[1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.5ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:50:38.561680&#39;, &#39;2016-09-06 03:50:38.561680&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:50:38.561680&#39;, &#39;2016-09-06 03:50:38.561680&#39;, 298486374)[0m
+[1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:51:12.833624&#39;, &#39;2016-09-06 03:51:12.833624&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:51:12.833624&#39;, &#39;2016-09-06 03:51:12.833624&#39;, 298486374)[0m
+[1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.6ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:55:14.937886&#39;, &#39;2016-09-06 03:55:14.937886&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:55:14.937886&#39;, &#39;2016-09-06 03:55:14.937886&#39;, 298486374)[0m
+[1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML Completed 500 Internal Server Error in 0ms (Views: 0.1ms |
+ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.4ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:55:44.108230&#39;, &#39;2016-09-06 03:55:44.108230&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:55:44.108230&#39;, &#39;2016-09-06 03:55:44.108230&#39;, 298486374)[0m
+[1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.6ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:56:57.496606&#39;, &#39;2016-09-06 03:56:57.496606&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:56:57.496606&#39;, &#39;2016-09-06 03:56:57.496606&#39;, 298486374)[0m
+[1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML</p>
+
+<pre>[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 500 Internal Server Error in 6ms (Views: 5.2ms | ActiveRecord:
+0.4ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.4ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:57:14.393637&#39;, &#39;2016-09-06 03:57:14.393637&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:57:14.393637&#39;, &#39;2016-09-06 03:57:14.393637&#39;, 298486374)[0m
+[1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML</p>
+
+<pre>[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:58:15.666446&#39;, &#39;2016-09-06 03:58:15.666446&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 03:58:15.666446&#39;, &#39;2016-09-06 03:58:15.666446&#39;, 298486374)[0m
+[1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML</p>
+
+<pre>[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.6ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:06:09.859762&#39;, &#39;2016-09-06 04:06:09.859762&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:06:09.859762&#39;, &#39;2016-09-06 04:06:09.859762&#39;, 298486374)[0m
+[1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:06:41.837587&#39;, &#39;2016-09-06 04:06:41.837587&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:06:41.837587&#39;, &#39;2016-09-06 04:06:41.837587&#39;, 298486374)[0m
+[1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.4ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:08:33.013954&#39;, &#39;2016-09-06 04:08:33.013954&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:08:33.013954&#39;, &#39;2016-09-06 04:08:33.013954&#39;, 298486374)[0m
+[1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;foo&quot;}
+[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.4ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:15:55.269850&#39;, &#39;2016-09-06 04:15:55.269850&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:15:55.269850&#39;, &#39;2016-09-06 04:15:55.269850&#39;, 298486374)[0m
+[1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;h2&gt;LIM&lt;/h2&gt;&lt;br&gt;&lt;h3&gt;test&lt;/h3&gt;&lt;br&gt;&lt;a href=&#39;google.com&#39;&gt;Link to google&lt;/a&gt;&quot;], [&quot;created_at&quot;, 2016-09-06 04:15:55 UTC], [&quot;updated_at&quot;, 2016-09-06 04:15:55 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;foo&quot;}
+[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:16:09.036824&#39;, &#39;2016-09-06 04:16:09.036824&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:16:09.036824&#39;, &#39;2016-09-06 04:16:09.036824&#39;, 298486374)[0m
+[1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;h2&gt;LIM&lt;/h2&gt;&lt;br&gt;&lt;h3&gt;test&lt;/h3&gt;&lt;br&gt;&lt;a href=&#39;google.com&#39;&gt;Link to google&lt;/a&gt;&quot;], [&quot;created_at&quot;, 2016-09-06 04:16:09 UTC], [&quot;updated_at&quot;, 2016-09-06 04:16:09 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;bar&quot;}
+[1m[36mContentPage Load (0.2ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;bar&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.7ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:17:08.749997&#39;, &#39;2016-09-06 04:17:08.749997&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:17:08.749997&#39;, &#39;2016-09-06 04:17:08.749997&#39;, 298486374)[0m
+[1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;h2&gt;LIM&lt;/h2&gt;&lt;br&gt;&lt;h3&gt;test&lt;/h3&gt;&lt;br&gt;&lt;a href=&#39;google.com&#39;&gt;Link to google&lt;/a&gt;&quot;], [&quot;created_at&quot;, 2016-09-06 04:17:08 UTC], [&quot;updated_at&quot;, 2016-09-06 04:17:08 UTC]]
+[1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;bar&quot;}
+[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;bar&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 200 OK in 17231ms (Views: 1.9ms | ActiveRecord: 0.7ms)</p>
+
+<pre>[1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:18:17.884493&#39;, &#39;2016-09-06 04:18:17.884493&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:18:17.884493&#39;, &#39;2016-09-06 04:18:17.884493&#39;, 298486374)[0m
+[1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;h2&gt;LIM&lt;/h2&gt;&lt;br&gt;&lt;h3&gt;test&lt;/h3&gt;&lt;br&gt;&lt;a href=&#39;google.com&#39;&gt;Link to google&lt;/a&gt;&quot;], [&quot;created_at&quot;, 2016-09-06 04:18:17 UTC], [&quot;updated_at&quot;, 2016-09-06 04:18:17 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;bar&quot;}
+[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;bar&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:37:30.404079&#39;, &#39;2016-09-06 04:37:30.404079&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 04:37:30.404079&#39;, &#39;2016-09-06 04:37:30.404079&#39;, 298486374)[0m
+[1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;h2&gt;LIM&lt;/h2&gt;&lt;br&gt;&lt;h3&gt;test&lt;/h3&gt;&lt;br&gt;&lt;a href=&#39;google.com&#39;&gt;Link to google&lt;/a&gt;&quot;], [&quot;created_at&quot;, 2016-09-06 04:37:30 UTC], [&quot;updated_at&quot;, 2016-09-06 04:37:30 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;bar&quot;}
+[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;bar&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.4ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:10:50.756599&#39;, &#39;2016-09-06 05:10:50.756599&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:10:50.756599&#39;, &#39;2016-09-06 05:10:50.756599&#39;, 298486374)[0m
+[1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_create_a_new_page_content</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;h2&gt;LIM&lt;/h2&gt;&lt;br&gt;&lt;h3&gt;test&lt;/h3&gt;&lt;br&gt;&lt;a href=&#39;google.com&#39;&gt;Link to google&lt;/a&gt;&quot;], [&quot;created_at&quot;, 2016-09-06 05:10:50 UTC], [&quot;updated_at&quot;, 2016-09-06 05:10:50 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:10:51 UTC], [&quot;updated_at&quot;, 2016-09-06 05:10:51 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 937ms (Views: 0.2ms | ActiveRecord: 1.7ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:11:34.997226&#39;, &#39;2016-09-06 05:11:34.997226&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:11:34.997226&#39;, &#39;2016-09-06 05:11:34.997226&#39;, 298486374)[0m
+[1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest:
+test_shouldn&#39;t_create_a_new_page_content_if_exists</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:11:36 UTC], [&quot;updated_at&quot;, 2016-09-06 05:11:36 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 1035ms (Views: 0.2ms | ActiveRecord: 1.3ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.4ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:11:52.246453&#39;, &#39;2016-09-06 05:11:52.246453&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:11:52.246453&#39;, &#39;2016-09-06 05:11:52.246453&#39;, 298486374)[0m
+[1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_get_content_of_url</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;foo&quot;}
+[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 400 Bad Request in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest:
+test_shouldn&#39;t_create_a_new_page_content_if_exists</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:11:53 UTC], [&quot;updated_at&quot;, 2016-09-06 05:11:53 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 1151ms (Views: 0.1ms | ActiveRecord: 1.7ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_create_a_new_page_content</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:11:54 UTC], [&quot;updated_at&quot;, 2016-09-06 05:11:54 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 882ms (Views: 0.2ms | ActiveRecord: 1.8ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML</p>
+
+<pre>[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;bar&quot;}
+[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;bar&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.7ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:12:26.865875&#39;, &#39;2016-09-06 05:12:26.865875&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:12:26.865875&#39;, &#39;2016-09-06 05:12:26.865875&#39;, 298486374)[0m
+[1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:26 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:26 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML</p>
+
+<pre>[1m[36mContentPage Load (0.5ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest:
+test_shouldn&#39;t_create_a_new_page_content_if_exists</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:26 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:26 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:27 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:27 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 1011ms (Views: 0.2ms | ActiveRecord: 1.3ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_create_a_new_page_content</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:27 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:27 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:28 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:28 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 740ms (Views: 0.2ms | ActiveRecord: 0.8ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:28 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:28 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;foo&quot;}
+[1m[36mContentPage Load (0.2ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:28 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:28 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;bar&quot;}
+[1m[36mContentPage Load (0.2ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;bar&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.8ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:12:46.623163&#39;, &#39;2016-09-06 05:12:46.623163&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:12:46.623163&#39;, &#39;2016-09-06 05:12:46.623163&#39;, 298486374)[0m
+[1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:46 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:46 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;foo&quot;}
+[1m[36mContentPage Load (0.4ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_create_a_new_page_content</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:46 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:46 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:47 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:47 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 798ms (Views: 0.2ms | ActiveRecord: 1.9ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest:
+test_shouldn&#39;t_create_a_new_page_content_if_exists</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:47 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:47 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:48 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:48 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 824ms (Views: 0.2ms | ActiveRecord: 1.6ms) Processing
+by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 738ms (Views: 0.2ms | ActiveRecord: 2.5ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:49 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:49 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;bar&quot;}
+[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;bar&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:12:49 UTC], [&quot;updated_at&quot;, 2016-09-06 05:12:49 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML</p>
+
+<pre>[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.4ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM &quot;content_pages&quot;[0m
+[1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:13:27.159685&#39;, &#39;2016-09-06 05:13:27.159685&#39;, 980190962)[0m
+[1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;id&quot;) VALUES (&#39;MyString&#39;, &#39;MyString&#39;, &#39;2016-09-06 05:13:27.159685&#39;, &#39;2016-09-06 05:13:27.159685&#39;, 298486374)[0m
+[1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;content_pages&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;ar_internal_metadata&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_create_a_new_page_content</p>
+<hr>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:13:27 UTC], [&quot;updated_at&quot;, 2016-09-06 05:13:27 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-create">ContentController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;}
+[1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;http://ruby.bastardsbook.com/chapters/html-parsing/&quot;], [&quot;content&quot;, &quot;[{:tag=&gt;\&quot;h1\&quot;, :text=&gt;\&quot;Parsing HTML with Nokogiri\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\\n\&quot;}, {:tag=&gt;\&quot;h2\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Installing Nokogiri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Opening a page with Nokogiri and open-uri\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;A table of syntax\\n\&quot;}, {:tag=&gt;\&quot;h3\&quot;, :text=&gt;\&quot;Xpath selectors\\n\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About Page\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;The Bastards Book of Ruby\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contact\&quot;, :link=&gt;\&quot;#contact\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Supplementals\&quot;, :link=&gt;\&quot;/toc#supplementals\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Top of the Rock. Photo by Dan Nguyen\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/5908183250/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri\&quot;, :link=&gt;\&quot;#h-2-1\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and CSS selectors\&quot;, :link=&gt;\&quot;#h-2-2\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri and your web inspector\&quot;, :link=&gt;\&quot;#h-2-3\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;previous chapter\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Nokogiri gem\&quot;, :link=&gt;\&quot;http://nokogiri.org/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;official Nokogiri installation guide here\&quot;, :link=&gt;\&quot;http://nokogiri.org/tutorials/installing_nokogiri.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Cascading Style Sheets\&quot;, :link=&gt;\&quot;http://htmlhelp.com/reference/css/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;click here\&quot;, :link=&gt;\&quot;http://apple.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Microsoft\&quot;, :link=&gt;\&quot;http://www.microsoft.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;learn more\&quot;, :link=&gt;\&quot;http://www.w3.org\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;simple example webpage\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;CSS selectors to specify attribute values\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;tad more memorization\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/CSS2/selector.html#attribute-selectors\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;NodeSet-specific methods\&quot;, :link=&gt;\&quot;http://nokogiri.org/Nokogiri/XML/NodeSet.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample HTML\&quot;, :link=&gt;\&quot;#sample-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;XPath\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;regular expressions\&quot;, :link=&gt;\&quot;/chapters/regexes\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;thorough reference\&quot;, :link=&gt;\&quot;http://www.w3.org/TR/xpath/#section-Introduction\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;has a solid tutorial\&quot;, :link=&gt;\&quot;http://www.w3schools.com/xpath/xpath_intro.asp\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;a short comparison of CSS and XPath\&quot;, :link=&gt;\&quot;http://ejohn.org/blog/xpath-css-selectors/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Return to chapter outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;the web inspector\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;sample webpage again\&quot;, :link=&gt;\&quot;http://ruby.bastardsbook.com/files/hello-webpage.html\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\\n         \&quot;, :link=&gt;\&quot;http://en.wikipedia.org/wiki/HTML\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;next chapter\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Writing a Web Crawler\&quot;, :link=&gt;\&quot;/chapters/web-crawling\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Inspecting a Webpage&#39;s Traffic\&quot;, :link=&gt;\&quot;/chapters/web-inspecting-traffic\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Chapter Outline\&quot;, :link=&gt;\&quot;#chapter-outline\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Table of Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;\&quot;, :link=&gt;nil}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Home\&quot;, :link=&gt;\&quot;/\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;About\&quot;, :link=&gt;\&quot;/about\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Contents\&quot;, :link=&gt;\&quot;/toc\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Resources\&quot;, :link=&gt;\&quot;/resources\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Blog\&quot;, :link=&gt;\&quot;http://blog.bastardsbook.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@bastardsbook\&quot;, :link=&gt;\&quot;http://twitter.com/bastardsbook\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Facebook\&quot;, :link=&gt;\&quot;http://www.facebook.com/pages/The-Bastards-Book/173374762734210\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;dan@danwin.com\&quot;, :link=&gt;\&quot;mailto:dan@danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;danwin.com\&quot;, :link=&gt;\&quot;http://danwin.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;@dancow\&quot;, :link=&gt;\&quot;http://twitter.com/dancow\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;eyeheartnewyork\&quot;, :link=&gt;\&quot;http://tumblr.eyeheartnewyork.com\&quot;}, {:tag=&gt;\&quot;link\&quot;, :text=&gt;\&quot;Flickr\&quot;, :link=&gt;\&quot;http://www.flickr.com/photos/zokuga/\&quot;}]&quot;], [&quot;created_at&quot;, 2016-09-06 05:13:28 UTC], [&quot;updated_at&quot;, 2016-09-06 05:13:28 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Completed 200 OK in 1013ms (Views: 0.2ms | ActiveRecord: 1.7ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_shouldn&#39;t_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:13:28 UTC], [&quot;updated_at&quot;, 2016-09-06 05:13:28 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;bar&quot;}
+[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;bar&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_get_content_of_url</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:13:28 UTC], [&quot;updated_at&quot;, 2016-09-06 05:13:28 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-get_content">ContentController#get_content</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;url&quot;=&gt;&quot;foo&quot;}
+[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT  &quot;content_pages&quot;.* FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]</pre>
+
+<p>Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.3ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m</pre>
+<hr>
+
+<p>ContentControllerTest: test_should_show_all_urls</p>
+<hr>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[1m[36mContentPage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;content_pages&quot; WHERE &quot;content_pages&quot;.&quot;url&quot; = $1 LIMIT $2[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO &quot;content_pages&quot; (&quot;url&quot;, &quot;content&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;url&quot;, &quot;foo&quot;], [&quot;content&quot;, &quot;&quot;], [&quot;created_at&quot;, 2016-09-06 05:13:28 UTC], [&quot;updated_at&quot;, 2016-09-06 05:13:28 UTC]]
+[1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m</pre>
+
+<p>Processing by <a
+href="../ContentController.html#method-i-list_all">ContentController#list_all</a>
+as HTML</p>
+
+<pre>[1m[36mContentPage Load (0.3ms)[0m  [1m[34mSELECT &quot;content_pages&quot;.* FROM &quot;content_pages&quot;[0m</pre>
+
+<p>Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
