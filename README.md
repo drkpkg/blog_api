@@ -14,6 +14,7 @@ Hello traveler, this is the blog API for the LIM Test, you need to know how it w
 
  - Copy the .env.example to .env
  - Change the file variables with the database username, password, port and host. Also, there's a secret key base option for production.
+ - Copy the config/database.yml.example to config/database.yml too!
 
 * Database creation
 
