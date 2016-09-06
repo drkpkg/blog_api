@@ -68,7 +68,11 @@
   
     <li><a href="./config_ru.html">config.ru</a>
   
+    <li><a href="./config/database_yml_example.html">database.yml.example</a>
+  
     <li><a href="./log/development_log.html">development.log</a>
+  
+    <li><a href="./log/production_log.html">production.log</a>
   
     <li><a href="./log/test_log.html">test.log</a>
   
@@ -90,12 +94,11 @@
 
 <p>gem &#39;rails&#39;, &#39;~&gt; 5.0.0&#39;, &#39;&gt;= 5.0.0.1&#39; gem
 &#39;pg&#39;, &#39;~&gt; 0.18&#39; gem &#39;puma&#39;, &#39;~&gt; 3.0&#39;
-gem &#39;rack-cors&#39; gem &#39;nokogiri&#39;</p>
+gem &#39;rack-cors&#39; gem &#39;nokogiri&#39; gem &#39;dotenv-rails&#39;</p>
 
 <p>group :development, :test do</p>
 
 <pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;byebug&#39;</span>, <span class="ruby-identifier">platform</span><span class="ruby-operator">:</span> :<span class="ruby-identifier">mri</span>
-<span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;dotenv-rails&#39;</span>
 </pre>
 
 <p>end</p>

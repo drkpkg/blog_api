@@ -5,7 +5,7 @@ Rails.application.routes.draw do
         get 'list_all' => 'content#list_all', as: :list_all
       end
       scope 'content' do
-        get ':url' => 'content#get_content', as: :get_content
+        get '/' => 'content#get_content', as: :get_content
         post 'create' => 'content#create', as: :create
       end
     end

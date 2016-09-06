@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>restart - RDoc Documentation</title>
+<title>database.yml.example - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -88,7 +88,32 @@
   </div>
 </nav>
 
-<main role="main" aria-label="Page tmp/restart.txt">
+<main role="main" aria-label="Page config/database.yml.example">
+
+<p>default: &amp;default</p>
+
+<pre>adapter: postgresql
+encoding: unicode
+username: &lt;%= ENV[&#39;DB_USER&#39;] %&gt;
+password: &lt;%= ENV[&#39;DB_PASSWORD&#39;] %&gt;
+pool: &lt;%= ENV.fetch(&quot;RAILS_MAX_THREADS&quot;) { 5 } %&gt;</pre>
+
+<p>development:</p>
+
+<pre>&lt;&lt;: *default
+database: blog_api_development</pre>
+
+<p>test:</p>
+
+<pre>&lt;&lt;: *default
+database: blog_api_test</pre>
+
+<p>production:</p>
+
+<pre>&lt;&lt;: *default
+database: &lt;%= ENV[&#39;DB_NAME&#39;] %&gt;
+username: &lt;%= ENV[&#39;DB_USER&#39;] %&gt;
+password: &lt;%= ENV[&#39;DB_PASSWORD&#39;] %&gt;</pre>
 </main>
 
 

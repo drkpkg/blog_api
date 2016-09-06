@@ -11,6 +11,8 @@ class ContentController < ApplicationController
   # No arguments needed
   #
   # TYPE: GET
+  #
+  # Returns JSON: {All list,status}
 
   def list_all
     lists = ContentPage.select('id,url,content').all
@@ -23,12 +25,14 @@ class ContentController < ApplicationController
   #
   # /api/v1/content/{url}
   #
-  # Arguments: url
+  # Arguments: id
   #
   # Type: GET
+  #
+  # Returns JSON: {content page,status}
 
   def get_content
-    content = ContentPage.find_by(url: params[:url])
+    content = ContentPage.find_by(id:params[:id])
     if !content.nil?
       status = 200
     else
@@ -46,6 +50,8 @@ class ContentController < ApplicationController
   # Arguments: url
   #
   # Type: POST
+  #
+  # Returns JSON: {status}
 
   def create
     content_page = ContentPage.new
@@ -67,6 +73,8 @@ class ContentController < ApplicationController
   # Arguments: url
   #
   # Type: Method
+  #
+  # Returns: Array
 
   def parse_page(url)
     #Simple solution

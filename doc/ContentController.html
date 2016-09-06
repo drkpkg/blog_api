@@ -130,12 +130,14 @@
 <p>Arguments: url</p>
 
 <p>Type: POST</p>
+
+<p>Returns JSON: {status}</p>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/content_controller.rb, line 50</span>
+            <pre><span class="ruby-comment"># File app/controllers/content_controller.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-identifier">content_page</span> = <span class="ruby-constant">ContentPage</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">content_page</span>.<span class="ruby-identifier">url</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>]
@@ -174,17 +176,19 @@
 
 <p>/api/v1/content/{url}</p>
 
-<p>Arguments: url</p>
+<p>Arguments: id</p>
 
 <p>Type: GET</p>
+
+<p>Returns JSON: {content page,status}</p>
           
           
 
           
           <div class="method-source-code" id="get_content-source">
-            <pre><span class="ruby-comment"># File app/controllers/content_controller.rb, line 30</span>
+            <pre><span class="ruby-comment"># File app/controllers/content_controller.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_content</span>
-  <span class="ruby-identifier">content</span> = <span class="ruby-constant">ContentPage</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">url</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:url</span>])
+  <span class="ruby-identifier">content</span> = <span class="ruby-constant">ContentPage</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">id</span><span class="ruby-value">:params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">content</span>.<span class="ruby-identifier">nil?</span>
     <span class="ruby-identifier">status</span> = <span class="ruby-value">200</span>
   <span class="ruby-keyword">else</span>
@@ -223,12 +227,14 @@
 <p>No arguments needed</p>
 
 <p>TYPE: GET</p>
+
+<p>Returns JSON: {All list,status}</p>
           
           
 
           
           <div class="method-source-code" id="list_all-source">
-            <pre><span class="ruby-comment"># File app/controllers/content_controller.rb, line 15</span>
+            <pre><span class="ruby-comment"># File app/controllers/content_controller.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">list_all</span>
   <span class="ruby-identifier">lists</span> = <span class="ruby-constant">ContentPage</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">&#39;id,url,content&#39;</span>).<span class="ruby-identifier">all</span>
   <span class="ruby-identifier">status</span> = <span class="ruby-value">200</span>
